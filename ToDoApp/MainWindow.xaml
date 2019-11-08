@@ -1,0 +1,22 @@
+﻿<Window x:Class="ToDoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="ToDoApp" Height="450" Width="800" Loaded="Window_Loaded">
+    
+        <DataGrid AllowDrop="True" x:Name="dgToDoList" FontSize="16" FontWeight="Bold" Foreground="Coral" Margin="10" 
+                 CanUserSortColumns="True"  AutoGenerateColumns="False"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path= CreationDate, StringFormat='dd-MM-yyyy'}" IsReadOnly="True" Header="Дата создания" Width="150" Foreground="#FF57ACF3" SortDirection="Ascending"/>
+                <DataGridCheckBoxColumn Binding="{Binding Path= IsDone, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" Header="Выполнено" Width="100" SortDirection="Ascending" />
+                <DataGridTextColumn Binding="{Binding Path= NumberOfTask}" IsReadOnly="False" Header="Номер заявки" Width="130" Foreground="#FF57ACF3" SortDirection="Ascending"/>
+                <DataGridTextColumn Binding="{Binding Path= Engineer}" IsReadOnly="False" Header="Инженер" Width="120" Foreground="#FF57ACF3" SortDirection="Ascending"/>
+                <DataGridTextColumn Binding="{Binding Path= Note}" IsReadOnly="False" Header="Примечания" Width="*" Foreground="#FF57ACF3"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    
+</Window>
